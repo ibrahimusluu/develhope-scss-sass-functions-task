@@ -1,0 +1,50 @@
+/* QUESTION from PLATFORM:
+Modify the exercise 2 code about mixin by creating a module for all declared variables. Then,
+create a module with a function. This function should accept a number as parameter and return the value converted into rem. 
+1rem is equal to 16px This function should be applied in the main stylesheet, so that the only sizing unit is rem.
+
+HINTS:
+@function rem(... @return calc(...    }
+@use "functions" as f; ...
+*/
+/*
+Suggestion:
+@function rem(... @return calc(...}
+@use "functions" as f; ...
+*/
+body {
+  border: 1px solid red;
+  padding: 20px;
+}
+body div:first-child {
+  text-align: center;
+}
+body div:first-child h1 {
+  margin: 0;
+  color: green;
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+body div.paragraphs {
+  display: flex;
+  text-align: center;
+}
+body div.paragraphs p {
+  border: 1px solid green;
+  padding: 35px;
+}
+body div.paragraphs p:nth-child(odd) {
+  color: blue;
+}
+body div.paragraphs p:nth-child(even) {
+  color: red;
+}
+body div:last-child {
+  border: 1px solid blue;
+  font-size: 24px;
+  color: green;
+  text-align: center;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

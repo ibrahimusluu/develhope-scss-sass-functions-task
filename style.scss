@@ -1,0 +1,76 @@
+/* QUESTION from PLATFORM:
+Modify the exercise 2 code about mixin by creating a module for all declared variables. Then,
+create a module with a function. This function should accept a number as parameter and return the value converted into rem. 
+1rem is equal to 16px This function should be applied in the main stylesheet, so that the only sizing unit is rem.
+
+HINTS:
+@function rem(... @return calc(...    }
+@use "functions" as f; ...
+*/
+
+// mixins parameters --> color, border-color, font-size(default: 1rem)
+
+// create module with a function for mixin with all variables --> function accepts a number parameter and return value converted into "rem". (only size rem)
+// 1rem = 16px
+
+/*
+Suggestion:
+@function rem(... @return calc(...}
+@use "functions" as f; ...
+*/
+
+// @use "sass:color"; --> color.adjust(red, $lightness: -30%); , color.complement($primary);
+// @use "sass:map";
+
+@use "sass:color";
+@use "sass:list";
+
+// $scss-red: red;
+// $scss-blue: blue;
+// $scss-green: green;
+$scss-font-size: 24px; // i don't know Which module or how to create a module for this variable about size
+$scss-red: color.adjust(red);
+$scss-blue: color.adjust(blue);
+$scss-green: color.adjust(green);
+// $scss-font-size: list.append(24px); // here didn't work
+
+@mixin article($color, $border-color, $font-size: 1rem) {
+    border: 1px solid $border-color;
+    padding: 20px;
+    div {
+        &:first-child {
+            text-align: center;
+            h1 {
+                margin: 0;
+                color: $color;
+                text-decoration: underline;
+                text-decoration-color: $scss-blue;
+            }
+        }
+        &.paragraphs {
+            display: flex;
+            text-align: center;
+            p {
+                border: 1px solid $color;
+                padding: 35px;
+                &:nth-child(odd) {
+                    color: $scss-blue;
+                }
+                &:nth-child(even) {
+                    color: $border-color;
+                }
+            }
+        }
+        &:last-child {
+            border: 1px solid $scss-blue;
+            font-size: $font-size;
+            color: $color;
+            text-align: center;
+            padding: 20px;
+        }
+    }
+}
+
+body {
+    @include article($scss-green, $scss-red, $scss-font-size);
+}
