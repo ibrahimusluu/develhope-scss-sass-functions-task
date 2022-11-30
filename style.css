@@ -41,7 +41,7 @@ body div.paragraphs p:nth-child(even) {
 }
 body div:last-child {
   border: 1px solid blue;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: green;
   text-align: center;
   padding: 20px;

@@ -24,11 +24,12 @@ Suggestion:
 
 @use "sass:color";
 @use "sass:list";
+@use "module.scss" as m;
 
 // $scss-red: red;
 // $scss-blue: blue;
 // $scss-green: green;
-$scss-font-size: 24px; // i don't know Which module or how to create a module for this variable about size
+$scss-font-size: m.toRem(24); // i don't know Which module or how to create a module for this variable about size
 $scss-red: color.adjust(red);
 $scss-blue: color.adjust(blue);
 $scss-green: color.adjust(green);
